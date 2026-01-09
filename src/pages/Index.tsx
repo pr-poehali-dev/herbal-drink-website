@@ -134,13 +134,13 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <header className="border-b border-border bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="bg-muted/50 py-2 border-b border-border">
-          <div className="container mx-auto px-4 flex items-center justify-center gap-2 text-xs text-muted-foreground">
-            <span>Проект создан при поддержке ФСИ</span>
+        <div className="bg-muted/50 py-3 border-b border-border">
+          <div className="container mx-auto px-4 flex items-center justify-center gap-4 text-sm text-muted-foreground">
+            <span className="font-medium">Проект создан при поддержке ФСИ</span>
             <img
-              src="https://cdn.poehali.dev/files/image.png"
-              alt="Фонд Содействия инновациям"
-              className="h-6 object-contain rounded-lg"
+              src="https://cdn.poehali.dev/files/Без имени.jpg"
+              alt="Фонд Содействия Инновациям"
+              className="h-12 object-contain"
             />
           </div>
         </div>
