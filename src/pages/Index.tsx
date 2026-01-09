@@ -134,7 +134,7 @@ const Index = () => {
       <header className="border-b border-border bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="bg-muted/50 py-2 border-b border-border">
           <div className="container mx-auto px-4 flex items-center justify-center gap-2 text-xs text-muted-foreground">
-            <span>Проект создан при поддержке</span>
+            <span>Проект создан при поддержке ФСИ</span>
             <img
               src="https://cdn.poehali.dev/files/image.png"
               alt="Фонд Содействия инновациям"
