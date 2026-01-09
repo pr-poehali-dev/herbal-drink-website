@@ -10,11 +10,13 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
   const [email, setEmail] = useState("");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { toast } = useToast();
 
   const products = [
@@ -161,7 +163,64 @@ const Index = () => {
               Где купить
             </a>
           </nav>
-          <Button className="hidden md:flex">Купить онлайн</Button>
+          <div className="flex items-center gap-3">
+            <Button className="hidden md:flex">Купить онлайн</Button>
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="md:hidden">
+                  <Icon name="Menu" size={24} />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                <SheetHeader>
+                  <SheetTitle className="flex items-center gap-2">
+                    <Icon name="Leaf" className="text-primary" size={28} />
+                    <span className="text-xl font-bold text-primary">Травяной заряд</span>
+                  </SheetTitle>
+                </SheetHeader>
+                <nav className="flex flex-col gap-6 mt-8">
+                  <a
+                    href="#products"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-lg font-medium text-foreground hover:text-primary transition-colors flex items-center gap-3 p-3 hover:bg-accent rounded-lg"
+                  >
+                    <Icon name="Droplet" size={20} />
+                    Продукты
+                  </a>
+                  <a
+                    href="#science"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-lg font-medium text-foreground hover:text-primary transition-colors flex items-center gap-3 p-3 hover:bg-accent rounded-lg"
+                  >
+                    <Icon name="Microscope" size={20} />
+                    Наука
+                  </a>
+                  <a
+                    href="#ingredients"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-lg font-medium text-foreground hover:text-primary transition-colors flex items-center gap-3 p-3 hover:bg-accent rounded-lg"
+                  >
+                    <Icon name="Leaf" size={20} />
+                    Состав
+                  </a>
+                  <a
+                    href="#stores"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-lg font-medium text-foreground hover:text-primary transition-colors flex items-center gap-3 p-3 hover:bg-accent rounded-lg"
+                  >
+                    <Icon name="Store" size={20} />
+                    Где купить
+                  </a>
+                  <div className="mt-4 pt-4 border-t border-border">
+                    <Button className="w-full" size="lg">
+                      <Icon name="ShoppingCart" className="mr-2" size={20} />
+                      Купить онлайн
+                    </Button>
+                  </div>
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </header>
 
