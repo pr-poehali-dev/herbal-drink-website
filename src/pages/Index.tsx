@@ -1,12 +1,346 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import Icon from "@/components/ui/icon";
 
 const Index = () => {
+  const products = [
+    {
+      name: "Энергия",
+      description: "Родиола розовая, элеутерококк, женьшень сибирский",
+      benefit: "Повышает работоспособность и концентрацию",
+      volume: "500 мл",
+    },
+    {
+      name: "Спокойствие",
+      description: "Мята, мелисса, ромашка, валериана",
+      benefit: "Снижает стресс и улучшает качество сна",
+      volume: "500 мл",
+    },
+    {
+      name: "Иммунитет",
+      description: "Эхинацея, шиповник, облепиха, смородина",
+      benefit: "Укрепляет защитные функции организма",
+      volume: "500 мл",
+    },
+  ];
+
+  const scientificFacts = [
+    {
+      icon: "Microscope",
+      title: "15 лет исследований",
+      description: "Собственная научная лаборатория и клинические испытания",
+    },
+    {
+      icon: "Award",
+      title: "98% натуральный состав",
+      description: "Только травы Башкортостана без синтетических добавок",
+    },
+    {
+      icon: "ShieldCheck",
+      title: "ISO 22000 сертификация",
+      description: "Международные стандарты безопасности пищевых продуктов",
+    },
+    {
+      icon: "Leaf",
+      title: "0 г сахара",
+      description: "Естественная сладость стевии без калорий",
+    },
+  ];
+
+  const ingredients = [
+    {
+      name: "Родиола розовая",
+      effect: "Адаптоген",
+      description: "Повышает устойчивость к стрессу и физическим нагрузкам. Содержит розавин и салидрозид.",
+    },
+    {
+      name: "Элеутерококк",
+      effect: "Энергия",
+      description: "Улучшает выносливость и когнитивные функции. Богат элеутерозидами.",
+    },
+    {
+      name: "Эхинацея пурпурная",
+      effect: "Иммунитет",
+      description: "Стимулирует иммунную систему и обладает противовирусным действием.",
+    },
+    {
+      name: "Шиповник",
+      effect: "Витамин C",
+      description: "Содержит в 50 раз больше витамина C, чем лимон. Мощный антиоксидант.",
+    },
+  ];
+
+  const stores = [
+    { name: "Перекресток", cities: "Москва, Санкт-Петербург" },
+    { name: "Азбука Вкуса", cities: "Москва" },
+    { name: "ВкусВилл", cities: "По всей России" },
+    { name: "Wildberries", cities: "Доставка по России" },
+  ];
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <header className="border-b border-border bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Icon name="Leaf" className="text-primary" size={32} />
+            <span className="text-2xl font-bold text-primary">Травяной заряд</span>
+          </div>
+          <nav className="hidden md:flex gap-8">
+            <a href="#products" className="text-foreground hover:text-primary transition-colors">
+              Продукты
+            </a>
+            <a href="#science" className="text-foreground hover:text-primary transition-colors">
+              Наука
+            </a>
+            <a href="#ingredients" className="text-foreground hover:text-primary transition-colors">
+              Состав
+            </a>
+            <a href="#stores" className="text-foreground hover:text-primary transition-colors">
+              Где купить
+            </a>
+          </nav>
+          <Button className="hidden md:flex">Купить онлайн</Button>
+        </div>
+      </header>
+
+      <section className="relative py-24 md:py-32 bg-gradient-to-b from-accent/30 to-background overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8 animate-fade-in">
+              <h1 className="text-5xl md:text-7xl font-bold leading-tight text-foreground">
+                Напитки с силой трав Башкортостана
+              </h1>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                Функциональные травяные напитки на основе научных исследований. Без сахара, ГМО и консервантов.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="text-lg">
+                  Заказать сейчас
+                </Button>
+                <Button size="lg" variant="outline" className="text-lg">
+                  Узнать больше
+                </Button>
+              </div>
+              <div className="flex gap-8 pt-4">
+                <div>
+                  <div className="text-3xl font-bold text-primary">15+</div>
+                  <div className="text-sm text-muted-foreground">Лет исследований</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-primary">98%</div>
+                  <div className="text-sm text-muted-foreground">Натуральный состав</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-primary">0г</div>
+                  <div className="text-sm text-muted-foreground">Сахара</div>
+                </div>
+              </div>
+            </div>
+            <div className="animate-scale-in">
+              <img
+                src="https://cdn.poehali.dev/projects/be015741-f2a1-4265-97b5-2c321af44282/files/5e930663-588e-4442-8165-3a2cbd8931cd.jpg"
+                alt="Травяной заряд - три бутылки"
+                className="w-full h-auto rounded-2xl shadow-2xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="products" className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground">Линейка продуктов</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Каждый напиток создан для решения конкретной задачи на основе научных исследований
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {products.map((product, index) => (
+              <Card
+                key={index}
+                className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-primary animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <CardContent className="p-8 space-y-4">
+                  <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <Icon name="Droplet" className="text-primary" size={32} />
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground">{product.name}</h3>
+                  <p className="text-sm text-muted-foreground italic">{product.description}</p>
+                  <p className="text-base text-foreground font-medium">{product.benefit}</p>
+                  <div className="pt-4 border-t border-border">
+                    <span className="text-sm text-muted-foreground">{product.volume}</span>
+                  </div>
+                  <Button className="w-full" variant="outline">
+                    Подробнее
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="science" className="py-24 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+            <div className="space-y-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground">Научный подход</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Мы не просто используем травы — мы изучаем их свойства в собственной лаборатории. Каждый ингредиент
+                проходит клинические испытания и сертификацию.
+              </p>
+            </div>
+            <div>
+              <img
+                src="https://cdn.poehali.dev/projects/be015741-f2a1-4265-97b5-2c321af44282/files/43013234-ab22-4239-879a-96c170adae2f.jpg"
+                alt="Научная лаборатория"
+                className="w-full h-auto rounded-2xl shadow-xl"
+              />
+            </div>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {scientificFacts.map((fact, index) => (
+              <Card
+                key={index}
+                className="bg-white hover:shadow-lg transition-shadow animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <CardContent className="p-6 space-y-3 text-center">
+                  <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
+                    <Icon name={fact.icon as any} className="text-primary" size={28} />
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground">{fact.title}</h3>
+                  <p className="text-sm text-muted-foreground">{fact.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="ingredients" className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+              <img
+                src="https://cdn.poehali.dev/projects/be015741-f2a1-4265-97b5-2c321af44282/files/f40d0a45-8eec-4de3-b3f0-895e66d25bd1.jpg"
+                alt="Травы Башкортостана"
+                className="w-full h-auto rounded-2xl shadow-xl"
+              />
+            </div>
+            <div className="space-y-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground">Состав и польза</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Все травы собраны в экологически чистых районах Башкортостана. Мы используем только проверенные
+                растения с доказанной эффективностью.
+              </p>
+              <div className="flex items-center gap-3 bg-accent p-4 rounded-lg">
+                <Icon name="AlertCircle" className="text-primary flex-shrink-0" size={24} />
+                <p className="text-sm text-foreground">
+                  Без сахара, ГМО, консервантов и искусственных красителей
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-6">
+            {ingredients.map((ingredient, index) => (
+              <Card
+                key={index}
+                className="hover:shadow-lg transition-shadow animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <CardContent className="p-6 space-y-3">
+                  <div className="flex items-start justify-between">
+                    <h3 className="text-xl font-bold text-foreground">{ingredient.name}</h3>
+                    <span className="text-xs font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full">
+                      {ingredient.effect}
+                    </span>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{ingredient.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="stores" className="py-24 bg-primary text-primary-foreground">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="text-4xl md:text-5xl font-bold">Где купить</h2>
+            <p className="text-xl opacity-90 max-w-2xl mx-auto">
+              Наши напитки доступны в крупнейших ретейлерах России и онлайн
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {stores.map((store, index) => (
+              <Card
+                key={index}
+                className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 transition-colors animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <CardContent className="p-6 space-y-2">
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-3">
+                    <Icon name="Store" className="text-white" size={24} />
+                  </div>
+                  <h3 className="text-xl font-bold text-white">{store.name}</h3>
+                  <p className="text-sm text-white/70">{store.cities}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <div className="text-center">
+            <Button size="lg" variant="secondary" className="text-lg">
+              <Icon name="ShoppingCart" className="mr-2" size={20} />
+              Заказать онлайн с доставкой
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <footer className="bg-foreground text-background py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <Icon name="Leaf" className="text-primary" size={28} />
+                <span className="text-xl font-bold">Травяной заряд</span>
+              </div>
+              <p className="text-sm opacity-70">Функциональные напитки с научным подходом</p>
+            </div>
+            <div>
+              <h4 className="font-bold mb-3">Продукты</h4>
+              <ul className="space-y-2 text-sm opacity-70">
+                <li>Энергия</li>
+                <li>Спокойствие</li>
+                <li>Иммунитет</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold mb-3">Компания</h4>
+              <ul className="space-y-2 text-sm opacity-70">
+                <li>О нас</li>
+                <li>Лаборатория</li>
+                <li>Сертификаты</li>
+                <li>Контакты</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold mb-3">Контакты</h4>
+              <ul className="space-y-2 text-sm opacity-70">
+                <li>info@travyanoycharge.ru</li>
+                <li>+7 (800) 555-35-35</li>
+                <li>Башкортостан, Уфа</li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-white/10 pt-8 text-center text-sm opacity-70">
+            <p>© 2026 Травяной заряд. Все права защищены.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
