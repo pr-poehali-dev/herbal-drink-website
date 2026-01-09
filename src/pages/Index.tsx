@@ -1,28 +1,80 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
+  const [email, setEmail] = useState("");
+  const { toast } = useToast();
+
   const products = [
     {
       name: "Энергия",
       description: "Родиола розовая, элеутерококк, женьшень сибирский",
       benefit: "Повышает работоспособность и концентрацию",
       volume: "500 мл",
+      fullDescription: "Напиток 'Энергия' разработан для повышения физической и умственной работоспособности. Содержит экстракты родиолы розовой, элеутерококка и сибирского женьшеня — растений-адаптогенов, которые помогают организму справляться со стрессом и нагрузками.",
+      ingredients: [
+        { name: "Родиола розовая", amount: "250 мг" },
+        { name: "Элеутерококк", amount: "200 мг" },
+        { name: "Женьшень сибирский", amount: "150 мг" },
+        { name: "Экстракт зеленого чая", amount: "100 мг" },
+      ],
+      howToUse: "Принимать по 250 мл утром за 30 минут до еды. Курс: 30 дней.",
+      contraindications: "Не рекомендуется при гипертонии, беременности и индивидуальной непереносимости.",
     },
     {
       name: "Спокойствие",
       description: "Мята, мелисса, ромашка, валериана",
       benefit: "Снижает стресс и улучшает качество сна",
       volume: "500 мл",
+      fullDescription: "Напиток 'Спокойствие' создан для нормализации работы нервной системы. Травы в составе обладают мягким седативным действием, помогают расслабиться и улучшить качество сна без эффекта привыкания.",
+      ingredients: [
+        { name: "Экстракт мяты", amount: "200 мг" },
+        { name: "Мелисса лекарственная", amount: "250 мг" },
+        { name: "Ромашка аптечная", amount: "150 мг" },
+        { name: "Корень валерианы", amount: "100 мг" },
+      ],
+      howToUse: "Принимать по 250 мл вечером за 1-2 часа до сна.",
+      contraindications: "Не рекомендуется при управлении транспортом и работе с механизмами.",
     },
     {
       name: "Иммунитет",
       description: "Эхинацея, шиповник, облепиха, смородина",
       benefit: "Укрепляет защитные функции организма",
       volume: "500 мл",
+      fullDescription: "Напиток 'Иммунитет' разработан для укрепления защитных сил организма. Высокое содержание витамина C и биофлавоноидов помогает противостоять вирусам и бактериям, особенно в период простуд.",
+      ingredients: [
+        { name: "Эхинацея пурпурная", amount: "300 мг" },
+        { name: "Экстракт шиповника", amount: "250 мг" },
+        { name: "Облепиха", amount: "200 мг" },
+        { name: "Черная смородина", amount: "150 мг" },
+      ],
+      howToUse: "Принимать по 250 мл 2 раза в день во время еды. Курс: 14-21 день.",
+      contraindications: "Не рекомендуется при аутоиммунных заболеваниях и аллергии на компоненты.",
     },
   ];
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      toast({
+        title: "Спасибо за подписку!",
+        description: "Мы отправим вам информацию о новинках и специальных предложениях.",
+      });
+      setEmail("");
+    }
+  };
 
   const scientificFacts = [
     {
@@ -80,6 +132,16 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <header className="border-b border-border bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+        <div className="bg-muted/50 py-2 border-b border-border">
+          <div className="container mx-auto px-4 flex items-center justify-center gap-2 text-xs text-muted-foreground">
+            <span>Проект создан при поддержке</span>
+            <img
+              src="https://cdn.poehali.dev/files/image.png"
+              alt="Фонд Содействия инновациям"
+              className="h-6 object-contain"
+            />
+          </div>
+        </div>
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Icon name="Leaf" className="text-primary" size={32} />
@@ -172,9 +234,52 @@ const Index = () => {
                   <div className="pt-4 border-t border-border">
                     <span className="text-sm text-muted-foreground">{product.volume}</span>
                   </div>
-                  <Button className="w-full" variant="outline">
-                    Подробнее
-                  </Button>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button className="w-full" variant="outline">
+                        Подробнее
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+                      <DialogHeader>
+                        <DialogTitle className="text-3xl font-bold">{product.name}</DialogTitle>
+                        <DialogDescription className="text-base">{product.benefit}</DialogDescription>
+                      </DialogHeader>
+                      <div className="space-y-6 mt-4">
+                        <div>
+                          <h4 className="font-semibold text-lg mb-2">Описание</h4>
+                          <p className="text-muted-foreground leading-relaxed">{product.fullDescription}</p>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-lg mb-3">Состав на 500 мл</h4>
+                          <div className="grid grid-cols-2 gap-3">
+                            {product.ingredients.map((ing, idx) => (
+                              <div key={idx} className="flex justify-between items-center p-3 bg-accent rounded-lg">
+                                <span className="text-sm font-medium">{ing.name}</span>
+                                <span className="text-sm text-muted-foreground">{ing.amount}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-lg mb-2">Способ применения</h4>
+                          <p className="text-muted-foreground">{product.howToUse}</p>
+                        </div>
+                        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                          <div className="flex gap-2">
+                            <Icon name="AlertTriangle" className="text-yellow-600 flex-shrink-0" size={20} />
+                            <div>
+                              <h4 className="font-semibold text-sm mb-1">Противопоказания</h4>
+                              <p className="text-xs text-muted-foreground">{product.contraindications}</p>
+                            </div>
+                          </div>
+                        </div>
+                        <Button className="w-full" size="lg">
+                          Купить за 350 ₽
+                        </Button>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
                 </CardContent>
               </Card>
             ))}
@@ -262,6 +367,44 @@ const Index = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-gradient-to-b from-accent/30 to-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto">
+            <Card className="border-2 border-primary/20">
+              <CardContent className="p-8 md:p-12">
+                <div className="text-center space-y-4 mb-8">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
+                    <Icon name="Mail" className="text-primary" size={32} />
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-foreground">Подпишитесь на новости</h2>
+                  <p className="text-muted-foreground">
+                    Узнавайте первыми о новых вкусах, специальных предложениях и научных исследованиях
+                  </p>
+                </div>
+                <form onSubmit={handleSubscribe} className="space-y-4">
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Input
+                      type="email"
+                      placeholder="Ваш email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                      className="flex-1 h-12"
+                    />
+                    <Button type="submit" size="lg" className="sm:w-auto">
+                      Подписаться
+                    </Button>
+                  </div>
+                  <p className="text-xs text-muted-foreground text-center">
+                    Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
+                  </p>
+                </form>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
