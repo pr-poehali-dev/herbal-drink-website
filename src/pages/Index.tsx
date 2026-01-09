@@ -135,7 +135,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <header className="border-b border-border bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="bg-muted/50 py-3 border-b border-border">
-          <div className="container mx-auto px-4 flex items-center justify-center gap-4 text-sm text-muted-foreground">
+          <div className="container mx-auto px-4 flex items-center justify-center gap-4 text-sm text-muted-foreground bg-[#ffffff]">
             <span className="font-medium">Проект создан при поддержке ФСИ</span>
             <img
               src="https://cdn.poehali.dev/files/Без имени.jpg"
@@ -487,7 +487,7 @@ const Index = () => {
                   <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-3">
                     <Icon name="Store" className="text-white" size={24} />
                   </div>
-                  <h3 className="text-xl font-bold text-white">{store.name}</h3>
+                  <h3 className="text-xl font-bold text-white text-left">{store.name}</h3>
                   <p className="text-sm text-white/70">{store.cities}</p>
                 </CardContent>
               </Card>
