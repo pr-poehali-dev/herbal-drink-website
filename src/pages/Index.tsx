@@ -80,11 +80,6 @@ const Index = () => {
 
   const scientificFacts = [
     {
-      icon: "Microscope",
-      title: "15 лет исследований",
-      description: "Собственная научная лаборатория и клинические испытания",
-    },
-    {
       icon: "Award",
       title: "98% натуральный состав",
       description: "Только травы Башкортостана без синтетических добавок",
