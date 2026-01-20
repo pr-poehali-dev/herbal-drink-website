@@ -313,7 +313,7 @@ const Index = () => {
                           <h4 className="font-semibold text-lg mb-3">Состав на 500 мл</h4>
                           <div className="grid grid-cols-2 gap-3">
                             {product.ingredients.map((ing, idx) => (
-                              <div key={idx} className="flex justify-between items-center p-3 bg-accent rounded-lg">
+                              <div key={idx} className="flex justify-between items-center p-3 bg-accent rounded-lg px-0 py-0">
                                 <span className="text-sm font-medium">{ing.name}</span>
                                 <span className="text-sm text-muted-foreground">{ing.amount}</span>
                               </div>
