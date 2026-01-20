@@ -81,7 +81,7 @@ const Index = () => {
   const scientificFacts = [
     {
       icon: "Award",
-      title: "98% натуральный состав",
+      title: "100% натуральный состав",
       description: "Только травы Башкортостана без синтетических добавок",
     },
     {
