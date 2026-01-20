@@ -310,9 +310,7 @@ const Index = () => {
                             </div>
                           </div>
                         </div>
-                        <Button className="w-full" size="lg">
-                          Купить за 350 ₽
-                        </Button>
+                        <Button className="w-full" size="lg">Купить</Button>
                       </div>
                     </DialogContent>
                   </Dialog>
