@@ -248,7 +248,7 @@ const Index = () => {
                   <div className="text-sm text-muted-foreground">Лет исследований</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-primary">98%</div>
+                  <div className="text-3xl font-bold text-primary">100%</div>
                   <div className="text-sm text-muted-foreground">Натуральный состав</div>
                 </div>
                 <div>
