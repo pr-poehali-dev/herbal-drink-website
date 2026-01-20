@@ -116,7 +116,7 @@ const Index = () => {
 
   const stores = [
     { name: "Перекресток", cities: "Москва, Санкт-Петербург" },
-    { name: "Азбука Вкуса", cities: "Москва" },
+    { name: "Азбука Вкуса", cities: "Уфа" },
     { name: "ВкусВилл", cities: "По всей России" },
     { name: "Wildberries", cities: "Доставка по России" },
   ];
