@@ -481,7 +481,7 @@ const Index = () => {
               <h4 className="font-bold mb-3">Продукты</h4>
               <ul className="space-y-2 text-sm opacity-70">
                 <li>Бодрость</li>
-                <li>Спокойствие</li>
+                <li>Баланс</li>
                 <li>Иммунитет</li>
               </ul>
             </div>
