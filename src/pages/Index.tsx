@@ -497,7 +497,7 @@ const Index = () => {
             <div>
               <h4 className="font-bold mb-3">Контакты</h4>
               <ul className="space-y-2 text-sm opacity-70">
-                <li>info@travyanoycharge.ru</li>
+                <li>saf.mulyukova@yandex.ru</li>
                 <li>+7 (800) 555-35-35</li>
                 <li>Башкортостан, Уфа</li>
               </ul>
