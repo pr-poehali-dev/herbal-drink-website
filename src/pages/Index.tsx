@@ -118,7 +118,7 @@ const Index = () => {
     { name: "Азбука Вкуса", cities: "Уфа" },
     { name: "ВкусВилл", cities: "По всей России" },
     { name: "Wildberries", cities: "Доставка по России" },
-    { name: "Wildberries", cities: "Доставка по России" },
+    { name: "Байрам", cities: "Доставка по России" },
   ];
 
   return (
