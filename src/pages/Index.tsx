@@ -438,9 +438,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold">Наша продукция скоро появиться на полках известных магазинов </h2>
-            <p className="text-xl opacity-90 max-w-2xl mx-auto">
-              Наши напитки доступны в крупнейших ретейлерах России и онлайн
-            </p>
+            <p className="text-xl opacity-90 max-w-2xl mx-auto">Наши напитки скоро будут доступны в крупнейших ретейлерах России и онлайн</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {stores.map((store, index) => (
