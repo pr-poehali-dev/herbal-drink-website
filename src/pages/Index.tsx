@@ -482,7 +482,7 @@ const Index = () => {
               <ul className="space-y-2 text-sm opacity-70">
                 <li>Бодрость</li>
                 <li>Баланс</li>
-                <li>Иммунитет</li>
+                <li>Гармония</li>
               </ul>
             </div>
             <div>
