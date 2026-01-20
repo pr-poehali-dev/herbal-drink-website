@@ -138,7 +138,7 @@ const Index = () => {
           <div className="container mx-auto px-4 flex items-center justify-center gap-4 text-sm text-muted-foreground bg-[#ffffff]">
             <span className="font-medium">Проект создан при поддержке ФСИ</span>
             <img
-              src="https://cdn.poehali.dev/files/Без имени.jpg"
+              src="https://cdn.poehali.dev/projects/be015741-f2a1-4265-97b5-2c321af44282/bucket/fa5a77d7-ac32-407b-a5a7-153ab830d467.jpg"
               alt="Фонд Содействия Инновациям"
               className="h-12 object-contain"
             />
