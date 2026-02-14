@@ -489,7 +489,7 @@ const Index = () => {
               <h4 className="font-bold mb-3">Компания</h4>
               <ul className="space-y-2 text-sm opacity-70">
                 <li>ООО "Исцеляющие травы Башкортостана"</li>
-                <li>Лаборатория</li>
+                <li>РБ, Абзелиловский р-н, с. Хамитово, ул. Улажа 25</li>
                 <li>t.me/@IsTrBash</li>
               </ul>
             </div>
