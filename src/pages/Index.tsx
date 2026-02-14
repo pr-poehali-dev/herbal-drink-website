@@ -498,7 +498,7 @@ const Index = () => {
               <ul className="space-y-2 text-sm opacity-70">
                 <li>saf.mulyukova@yandex.ru</li>
                 <li>+7 (800) 555-35-35</li>
-                <li>Башкортостан, Уфа</li>
+                <li>РБ, Абзелиловский р-н, с. Хамитово, ул. Улажа 26</li>
               </ul>
             </div>
           </div>
