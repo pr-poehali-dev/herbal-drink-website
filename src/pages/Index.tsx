@@ -490,7 +490,7 @@ const Index = () => {
               <ul className="space-y-2 text-sm opacity-70">
                 <li>ООО "Исцеляющие травы Башкортостана"</li>
                 <li>Лаборатория</li>
-                <li>@IsTrBash</li>
+                <li>t.me/@IsTrBash</li>
               </ul>
             </div>
             <div>
