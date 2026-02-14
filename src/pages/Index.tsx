@@ -488,7 +488,7 @@ const Index = () => {
             <div>
               <h4 className="font-bold mb-3">Компания</h4>
               <ul className="space-y-2 text-sm opacity-70">
-                <li>О нас</li>
+                <li>ООО "Исцеляющие травы Башкортостана"</li>
                 <li>Лаборатория</li>
                 <li>Контакты</li>
               </ul>
@@ -497,7 +497,8 @@ const Index = () => {
               <h4 className="font-bold mb-3">Контакты</h4>
               <ul className="space-y-2 text-sm opacity-70">
                 <li>saf.mulyukova@yandex.ru</li>
-                <li>+7 987 028 95 79</li>
+                <li>+7 (987) 028 95 79
+</li>
                 <li>РБ, Абзелиловский р-н, с. Хамитово, ул. Улажа 26</li>
               </ul>
             </div>
