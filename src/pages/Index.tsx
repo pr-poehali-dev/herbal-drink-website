@@ -126,7 +126,7 @@ const Index = () => {
       <header className="border-b border-border bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="bg-muted/50 py-3 border-b border-border">
           <div className="container mx-auto px-4 flex items-center justify-center gap-4 text-sm text-muted-foreground bg-[#ffffff]">
-            <span className="font-medium">Проект создан при поддержке ФСИ</span>
+            <span className="font-medium text-center">Проект создан при поддержке Федерального государственного бюджетного учреждения «Фонд содействия развитию малых форм предприятий в научно-технической сфере» в рамках программы «Студенческий стартап» федерального проекта «Платформа университетского технологического предпринимательства»</span>
             <img
               src="https://cdn.poehali.dev/projects/be015741-f2a1-4265-97b5-2c321af44282/bucket/fa5a77d7-ac32-407b-a5a7-153ab830d467.jpg"
               alt="Фонд Содействия Инновациям"
